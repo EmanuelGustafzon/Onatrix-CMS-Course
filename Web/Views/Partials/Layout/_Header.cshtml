@@ -1,0 +1,41 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var contentRoot = Umbraco.ContentAtRoot();
+    var siteSettings = contentRoot.OfType<SiteSettings>().FirstOrDefault();
+
+    var logo = siteSettings?.Logo?.Url();
+    var siteName = siteSettings?.SiteName ?? "";
+}
+
+<header class="flex justify-around items-center py-4">
+    <div>
+        <img class="w-36 h-12" src="@logo" alt="siteName" />
+    </div>
+    <div>
+        <button onclick="toggleNav()" class="md:hidden">
+            <i class="bi bi-list text-primary font-bold text-2xl"></i>
+        </button>
+        <nav id="nav" class="gap-4 hidden flex flex-col absolute right-0 w-40 font-bold text-primary
+                             md:flex md:relative md:flex-row md:bg-white ">
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+    <div class="hidden md:flex">
+        <i class="bi bi-search"></i>
+    </div>
+</header>
+
+<script>
+    let navIsOpen = false;
+    function toggleNav() {
+        navIsOpen = !navIsOpen;
+        const nav = document.getElementById("nav");
+        if(navIsOpen) {
+            nav.classList.remove('hidden')
+        } else [
+            nav.classList.add('hidden')
+        ]
+    }
+</script>
