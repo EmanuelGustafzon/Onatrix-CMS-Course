@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.Blocks;
+@{
+    var contentRoot = Umbraco.ContentAtRoot();
+    var siteSettings = contentRoot.OfType<SiteSettings>().FirstOrDefault();
+
+    var address = siteSettings?.Address ?? "";
+    var socialMedias = siteSettings?.SocialMedias;
+}
+
+<div class="bg-primary flex justify-around items-center py-2">
+    <div class="hidden md:flex">
+        <p class="text-white">@address</p>
+    </div>
+    <div class="flex gap-3">
+        @{
+            if (socialMedias is not null)
+            {
+                foreach (var SocialMediablock in socialMedias)
+                {
+                    var socialMedia = SocialMediablock.Content as ContentModels.SocialMediaItem;
+                    var link = socialMedia?.SocialMediaLink?.FirstOrDefault();
+                    if (socialMedia is null) continue;
+                        <div>
+                            <a href="@link?.Url" target="_blank">
+                                <img class="w-6 h-6" src="@socialMedia?.SocialMediaLogo?.Url()" alt="@socialMedia?.SocialMediaName" />
+                            </a>
+                        </div>
+                        
+                }
+            }
+        }
+    </div>
+</div>
