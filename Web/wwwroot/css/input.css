@@ -7,3 +7,7 @@
     --color-dark: #535656;
     --color-black: #0E0E0E;
 }
+
+.raw-html-from-text-editor h3 {
+    @apply text-4xl text-primary font-bold;
+}
