@@ -4,24 +4,24 @@
     var content = (ContentModels.HeroSection)Model.Content;
 }
 
-<section class="md:relative md:min-h-[300px] lg:min-h-[400px] xl:min-h-[500px] 2xl:min-h-[600px]">
-    <div class="absolute hidden md:block">
-        @if(content.HeroImage is not null)
-        {
-            <img src="@content.HeroImage.Url()" class="w-full h-full object-cover"/>
-        }
-    </div>
-    <div class="md:max-w-7xl mx-auto pt-12 px-4 relative z-2">
-        <div class="md:w-6/12 flex flex-col gap-6 justify-center">
-            <h1 class="self-center md:self-start text-4xl text-primary font-bold">@content.HeroTitle</h1>
-            <div class="self-center md:self-start">
-                @Html.Raw(content.HeroText)
-            </div>
-            @if(content.HeroLink is not null)
-            {
-                var link = content.HeroLink.FirstOrDefault();
-                <a class="bg-primary text-white py-2 px-10 self-center md:self-start rounded-sm cursor-pointer font-bold" href="@link?.Url">@link?.Name</a>
-            }
+<section class="grid md:grid-rows-8 md:grid-cols-8 w-full md:h-[400px] 2xl:h-[600px]">
+    @if (content.HeroImage is not null)
+    {
+        <div class="hidden md:block row-start-1 row-end-9 col-start-1 col-end-9 w-full h-full">
+            <img src="@content.HeroImage.Url()" class="object-cover w-full h-full" />
         </div>
-    </div>
+    }
+    <div class="row-start-3 row-end-8 col-start-1 col-end-9
+            flex flex-col items-center text-center
+            md:col-start-2 md:col-end-5 md:items-start md:text-left">
+        <h1 class="text-4xl text-primary font-bold">@content.HeroTitle</h1>
+        <div class="py-8">
+            @Html.Raw(content.HeroText)
+        </div>
+        @if (content.HeroLink is not null)
+        {
+            var link = content.HeroLink.FirstOrDefault();
+            <a class="md:self-start py-2 px-4 bg-primary text-white rounded-sm cursor-pointer font-bold" href="@link?.Url">@link?.Name</a>
+        }
+    </div> 
 </section>
