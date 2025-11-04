@@ -1,4 +1,21 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Cms.Core.Services.Navigation
+
+@inject IVariationContextAccessor VariationContextAccessor
+@inject IPublishedContentCache PublishedContentCache
+@inject IDocumentNavigationQueryService DocumentNavigationQueryService
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+@*
+    This snippet displays a list of links of the pages immediately under the top-most page in the content tree.
+    This is the home page for a standard website.
+    It also highlights the current active page/section in the navigation with the CSS class "current".
+*@ 
+
+
 
 @{
     var contentRoot = Umbraco.ContentAtRoot();
@@ -6,20 +23,30 @@
 
     var logo = siteSettings?.Logo?.Url();
     var siteName = siteSettings?.SiteName ?? "";
+
+    var selection = Model.Root(PublishedContentCache, DocumentNavigationQueryService).Children(VariationContextAccessor, PublishedContentCache, DocumentNavigationQueryService).Where(x => x.IsVisible(PublishedValueFallback)).ToArray(); 
 }
 
 <header class="flex justify-between items-center py-4 px-4 md:px-36">
-    <div>
+    <a href="/">
         <img class="w-36 h-12" src="@logo" alt="siteName" />
-    </div>
+    </a>
     <div>
         <button onclick="toggleNav()" class="md:hidden">
             <i class="bi bi-list text-primary font-bold text-2xl"></i>
         </button>
+        
         <nav id="nav" class="gap-4 hidden flex flex-col absolute right-4 w-36 font-bold text-primary bg-white-100 p-4 rounded-sm
-                             md:flex md:relative md:flex-row md:bg-white ">
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+                             md:flex md:relative md:flex-row md:bg-white">
+            @if (selection?.Length > 0)
+            {
+                @foreach (var item in selection)
+                {
+                    <div class="@(item.IsAncestorOrSelf(Model) ? "current" : null)">
+                        <a href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                    </div>
+                }
+            }
         </nav>
     </div>
     <div class="hidden md:flex gap-2">
