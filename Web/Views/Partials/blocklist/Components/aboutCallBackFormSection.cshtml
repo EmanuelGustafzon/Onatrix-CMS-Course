@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.AboutCallBackFormSection)Model.Content;
+}
+
+<section class="py-16">
+    <div class="px-4 md:px-36 block flex flex-col lg:flex-row gap-8">
+        <div class="flex flex-col gap-2 lg:w-6/12">
+            @Html.Raw(content.AboutUsContent)
+        </div>
+        <div class="block lg:flex flex-col lg:w-6/12 shadow-md lg:-mt-34 z-20">
+            <div class="bg-primary">
+                <p class="text-accent py-8 px-4 text-2xl font-bold">@content.AboutCallBackFormTitle</p>
+            </div>
+            <p class="text-base py-8 px-4 italic">@content.AboutCallBackFormDesc helo</p>
+        </div>
+    </div>  
+</section>

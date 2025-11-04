@@ -163,6 +163,19 @@
             "tag": "ul",
             "class": "rich-text-editor-ul"
           }
+        },
+        {
+          "label": "Images",
+          "items": [
+            {
+              "label": "full Width",
+              "data": {
+                "tag": "img",
+                "class": "w-full h-auto object-cover"
+              }
+            }
+          ]
+          
         }
       ]
     },
