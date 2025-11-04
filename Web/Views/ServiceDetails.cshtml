@@ -1,0 +1,20 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ServiceDetails>
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "mainLayout.cshtml";
+}
+	
+
+<section class="py-16 px-4 md:px-36">
+	<div class="max-w-7xl mx-auto px-4">
+		<div class="flex flex-row justify-between">
+			<aside class="flex flex-col w-3/12 gap-4">
+				@Html.GetBlockListHtml(Model.AsideWidgets)
+			</aside>
+			<div class="block w-px bg-dark"></div>
+			<div class="flex flex-col w-8/12 gap-2">
+				<div>@Html.Raw(Model.ServiceDetailPageContent)</div>
+			</div>
+		</div>
+	</div>	
+</section>
