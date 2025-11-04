@@ -517,6 +517,9 @@ img {
   width: 100%;
   object-fit: cover;
 }
+.current a {
+  color: var(--color-secondary);
+}
 .raw-html-from-text-editor h3 {
   font-size: var(--text-4xl);
   line-height: var(--tw-leading, var(--text-4xl--line-height));

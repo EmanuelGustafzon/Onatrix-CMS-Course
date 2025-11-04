@@ -12,9 +12,11 @@
 body {
     @apply font-poppins;
 }
-
 img {
     @apply w-full h-auto object-cover;
+}
+.current a {
+    @apply text-secondary;
 }
 .raw-html-from-text-editor h3 {
     @apply text-4xl text-primary font-bold;
