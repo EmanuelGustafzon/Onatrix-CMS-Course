@@ -1,0 +1,32 @@
+﻿{
+  "name": "Onatrix Rich Text Editor",
+  "alias": "Onatrix.RichTextEditor",
+  "extensions": [
+    {
+      "type": "tiptapToolbarExtension",
+      "kind": "styleMenu",
+      "alias": "MyCustom.Tiptap.StyleMenu",
+      "name": "My Custom Tiptap Style Menu",
+      "meta": {
+        "alias": "myCustomStyleMenu",
+        "icon": "icon-palette",
+        "label": "Onatrix Styles"
+      },
+      "items": [
+        {
+          "label": "Paragraphs",
+          "items": [
+            {
+              "label": "",
+              "data": {
+                "tag": "",
+                "class": ""
+              },
+              "appearance": {}
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

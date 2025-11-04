@@ -12,7 +12,7 @@
     var serviceDetailsItem = servicePage?.Children<ServiceDetails>()?.OrderByDescending(x => x.CreateDate).ToArray() ?? [];
 }
 
-<section class="py-4 bg-[@sectionColor}">
+<section class="py-4 bg-[@sectionColor} px-4 md:px-36 ">
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex flex-col gap-2 items-center">
             @if (settings.ShowServiceLabel)
