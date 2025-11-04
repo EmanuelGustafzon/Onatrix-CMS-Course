@@ -1,0 +1,49 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.FooterBannerSection)Model.Content;
+}
+
+<section class="pt-4 px-4 md:px-36 bg-white-100">
+	<div class="max-w-7xl mx-auto px-4">
+		<div class="flex flex-row justify-between">
+			<div class="hidden lg:flex flex-col lg:w-6/12 mr-12 relative">
+				<img class="bottom-0 right-0 absolute max-w-58 max-h-86 xl:max-h-126" src="/images/footer-banner-dots.svg" />
+				<img class="bottom-0 absolute w-[85px]" src="/images/footer-banner-bg.svg" />
+				<img class="z-3" src="@content.FooterBannerImage?.Url()" />
+			</div>
+			<div class="flex flex-col lg:w-9/12 gap-2 justify-center">
+				<h3 class="text-4xl font-bold text-primary ">@content.FooterBannerTitle</h3>
+				<ul class="my-6 flex flex-col gap-4">
+					<li>
+						<p>
+							<i class="bi bi-geo-alt-fill text-secondary text-xl"></i>
+							<span class="font-bold" >Office Location</span>
+						</p>
+						<p class="ml-6 font-light">
+							@content.FooterBannerAddress
+						</p>
+					</li>
+					<li>
+						<p>
+							<i class="bi bi-telephone-fill text-secondary text-xl"></i>
+							<span class="font-bold">Phone Number</span>
+						</p>
+						<p class="ml-6 font-light">
+							@content.FooterBannerPhone
+						</p>
+					</li>
+					<li>
+						<p>
+							<i class="bi bi-envelope-fill text-secondary text-xl"></i>
+							<span class="font-bold">E-mail Address</span>
+						</p>
+						<p class="ml-6 font-light">
+							@content.FooterBannerEmail
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
