@@ -1,5 +1,6 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Web.ViewModels
 @{
     var content = (ContentModels.AboutCallBackFormSection)Model.Content;
 }
@@ -14,6 +15,7 @@
                 <p class="text-accent py-8 px-4 text-2xl font-bold">@content.AboutCallBackFormTitle</p>
             </div>
             <p class="text-base py-8 px-4 italic">@content.AboutCallBackFormDesc helo</p>
+            <partial name="Partials/Forms/CallBackForm" model="new CallBackFormViewModel()"/>
         </div>
     </div>  
 </section>

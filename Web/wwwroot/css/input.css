@@ -29,3 +29,20 @@ body {
 .rich-text-editor-ul li::marker {
     @apply text-secondary;
 }
+
+.formBtn
+ {
+    @apply text-center font-bold rounded-md cursor-pointer select-none py-3 px-12 text-xl;
+}
+
+.formBtn-full {
+    @apply w-full;
+}
+
+.formBtn-primary {
+    @apply bg-primary text-accent;
+}
+
+.formBtn-accent {
+    @apply bg-accent text-primary;
+}
