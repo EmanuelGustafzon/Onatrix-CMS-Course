@@ -24,7 +24,7 @@
     var logo = siteSettings?.Logo?.Url();
     var siteName = siteSettings?.SiteName ?? "";
 
-    var selection = Model.Root(PublishedContentCache, DocumentNavigationQueryService).Children(VariationContextAccessor, PublishedContentCache, DocumentNavigationQueryService).Where(x => x.IsVisible(PublishedValueFallback)).ToArray(); 
+    var selection = Model.Root().Children().Where(x => x.IsVisible(PublishedValueFallback)).ToArray(); 
 }
 
 <header class="flex justify-between items-center py-4 px-4 md:px-36">
