@@ -5,7 +5,7 @@
     var stats = content.SuccessStastisitics.ToArray();
 }
 
-<section class="bg-primary py-16 px-4 md:px-36">
+<section class="bg-primary pt-16 px-4 md:px-36">
     <div class="flex flex-col justify-center align-center relative">
         <div>@Html.Raw(content.SuccessTitle)</div>
         <div class="flex flex-col md:flex-row justify-center gap-2 py-8">
@@ -23,7 +23,7 @@
                 }
             }
         </div>
-        <div class="w-2/2 md:w-1/2 self-center z-10">
+        <div class="w-2/2 md:w-2/3 self-center z-10 md:-mb-18">
             <img src="@content.SuccessImage.Url()" />
         </div>
     </div>
