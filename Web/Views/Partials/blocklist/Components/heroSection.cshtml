@@ -4,7 +4,7 @@
     var content = (ContentModels.HeroSection)Model.Content;
 }
 
-<section class="grid md:grid-rows-8 md:grid-cols-8 w-full md:h-[400px] 2xl:h-[600px]">
+<section class="grid md:grid-rows-8 md:grid-cols-8 w-full md:h-[500px] 2xl:h-[600px] bg-white-100 py-4">
     @if (content.HeroImage is not null)
     {
         <div class="hidden md:block row-start-1 row-end-9 col-start-1 col-end-9 w-full h-full">
@@ -13,7 +13,8 @@
     }
     <div class="row-start-3 row-end-8 col-start-1 col-end-9
             flex flex-col items-center text-center
-            md:col-start-2 md:col-end-5 md:items-start md:text-left">
+            md:col-start-1 md:col-end-7 lg:col-end-5 md:items-start md:text-left
+            px-4 md:px-36">
         <h1 class="text-4xl text-primary font-bold">@content.HeroTitle</h1>
         <div class="py-8">
             @Html.Raw(content.HeroText)
