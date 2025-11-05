@@ -209,6 +209,13 @@
             "tag": "span",
             "class": "text-dark"
           }
+        },
+        {
+          "label": "White",
+          "data": {
+            "tag": "span",
+            "class": "text-white"
+          }
         }
       ]
     }

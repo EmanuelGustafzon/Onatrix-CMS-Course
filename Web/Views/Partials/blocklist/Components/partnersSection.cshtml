@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.PartnersSection)Model.Content;
+    var partners = content.Partners.ToArray();
+}
+
+<section class="pt-24 pb-12 hidden md:block px-36">
+    <div class="hidden lg:flex flex-col pt-4">
+        <div class="flex gap-4 self-center">
+            @foreach (var partner in partners)
+            {
+                var partnerContent = partner.Content as ContentModels.PartnerLogoItem;
+                <div>
+                    <img class="max-w-32" src="@partnerContent.PartnerLogoImage.Url()" />
+                </div>
+            }
+        </div>
+        
+    </div>
+</section>
