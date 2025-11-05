@@ -46,3 +46,9 @@ body {
 .formBtn-accent {
     @apply bg-accent text-primary;
 }
+.input-validation-error {
+    @apply border-red-700 focus:ring-1 focus:ring-red-900;
+}
+.field-validation-error {
+    @apply m-1 block text-base text-red-700;
+}

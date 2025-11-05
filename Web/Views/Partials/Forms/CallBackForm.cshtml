@@ -1,7 +1,7 @@
 ﻿@using Web.ViewModels;
 @using Web.Enums
 @model CallBackFormViewModel
-@using (Html.BeginUmbracoForm("HandleCallBackForm", "Form", FormMethod.Post, new {novalidate = "novalidate", id = "callBackForm"}))
+@using (Html.BeginUmbracoForm("HandleCallBackForm", "CallBackForm", FormMethod.Post, new {novalidate = "novalidate", id = "callBackForm"}))
 {
     <div class="px-4 flex flex-col gap-6">
         <div>
@@ -23,7 +23,6 @@
             <label asp-for="SelectOption" class="sr-only"></label>
             <div>
                 <select asp-for="SelectOption" class="appearance-none w-full p-3 pr-10 border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none">
-                    <option value="" disabled hidden selected>Please select an option</option>
                     @{
                         var options = Enum.GetValues<ServicesEnum>();
                         foreach(var option in options)
@@ -39,8 +38,9 @@
                 <i class="bi bi-arrow-down text-gray-500 text-md"></i>
             </span>
         </div>
-        <div class="pb-4xl">
+        <div class="pb-8">
             <button class="formBtn formBtn-accent formBtn-full" type="submit">Submit</button>
         </div>
     </div>
 }
+<script src="~/scripts/form.js"></script>

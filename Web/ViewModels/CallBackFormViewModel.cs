@@ -1,5 +1,4 @@
-﻿using NPoco.Expressions;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using Web.Enums;
 
 namespace Web.ViewModels;
@@ -11,7 +10,7 @@ public class CallBackFormViewModel
     public string Name { get; set; } = null!;
 
     [Required(ErrorMessage = "Email is required")]
-    [RegularExpression(@"^[^\s@]+@[^\s@]+\.[^\s@]+$^[^\s@]+@[^\s@]+\.[^\s@]+$", ErrorMessage = "Invalid email address")]
+    [RegularExpression(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", ErrorMessage = "Invalid email address")]
     [Display(Name = "Email")]
     public string Email { get; set; } = null!;
 
