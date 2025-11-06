@@ -58,12 +58,28 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string Address => this.Value<string>(_publishedValueFallback, "address");
 
 		///<summary>
+		/// Email Sales
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("emailSales")]
+		public virtual string EmailSales => this.Value<string>(_publishedValueFallback, "emailSales");
+
+		///<summary>
 		/// Logo
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("logo")]
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Logo => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "logo");
+
+		///<summary>
+		/// Phone
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("phone")]
+		public virtual string Phone => this.Value<string>(_publishedValueFallback, "phone");
 
 		///<summary>
 		/// Site Name

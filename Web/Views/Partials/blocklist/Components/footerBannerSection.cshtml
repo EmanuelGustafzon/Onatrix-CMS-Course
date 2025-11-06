@@ -2,6 +2,9 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     var content = (ContentModels.FooterBannerSection)Model.Content;
+
+	var contentRoot = Umbraco.ContentAtRoot();
+	var siteSettings = contentRoot.OfType<SiteSettings>().FirstOrDefault();
 }
 
 <section class="pt-4 px-4 md:px-36 bg-white-100">
@@ -21,7 +24,7 @@
 							<span class="font-bold" >Office Location</span>
 						</p>
 						<p class="ml-6 font-light">
-							@content.FooterBannerAddress
+							@siteSettings.Address
 						</p>
 					</li>
 					<li>
@@ -30,7 +33,7 @@
 							<span class="font-bold">Phone Number</span>
 						</p>
 						<p class="ml-6 font-light">
-							@content.FooterBannerPhone
+							@siteSettings.Phone
 						</p>
 					</li>
 					<li>
@@ -39,7 +42,7 @@
 							<span class="font-bold">E-mail Address</span>
 						</p>
 						<p class="ml-6 font-light">
-							@content.FooterBannerEmail
+							@siteSettings.EmailSales
 						</p>
 					</li>
 				</ul>
