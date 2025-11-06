@@ -50,36 +50,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Footer Banner Address
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("footerBannerAddress")]
-		public virtual string FooterBannerAddress => this.Value<string>(_publishedValueFallback, "footerBannerAddress");
-
-		///<summary>
-		/// Footer Banner Email
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("footerBannerEmail")]
-		public virtual string FooterBannerEmail => this.Value<string>(_publishedValueFallback, "footerBannerEmail");
-
-		///<summary>
 		/// Footer banner Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("footerBannerImage")]
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops FooterBannerImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "footerBannerImage");
-
-		///<summary>
-		/// Footer Banner Phone
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("footerBannerPhone")]
-		public virtual string FooterBannerPhone => this.Value<string>(_publishedValueFallback, "footerBannerPhone");
 
 		///<summary>
 		/// Footer Banner Title
