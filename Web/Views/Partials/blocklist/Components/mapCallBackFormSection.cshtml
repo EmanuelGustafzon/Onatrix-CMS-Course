@@ -1,0 +1,29 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Web.ViewModels
+@{
+    var content = (ContentModels.MapCallBackFormSection)Model.Content;
+}
+
+<section>
+    <img class="w-full" src="@content.MapImage.Url()" />
+
+    <div class="w-full md:w-2/3 mx-auto bg-white mx-auto md:-mt-86 relative ">
+        <div class="flex flex-col gap-2">@Html.Raw(content.MapFormContent)</div>
+        <partial name="Partials/Forms/CallBackForm" model="new CallBackFormViewModel()" />
+        @if (TempData["FormSuccess"] is not null)
+        {
+            <div class="bg-green-50 text-green-800 p-4 mx-12 rounded-md">
+                @TempData["FormSuccess"]
+            </div>
+        }
+        @if (TempData["FormError"] is not null)
+        {
+            <div class="bg-red-50 text-red-800 p-4 mx-12 rounded-md">
+                @TempData["FormError"]
+            </div>
+        }
+    </div>
+</section>
+
+

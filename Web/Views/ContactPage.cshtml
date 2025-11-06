@@ -1,7 +1,9 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContactPage>
 @{
 	Layout = "mainLayout.cshtml";
 }
 
 <Partial name="Partials/Layout/_PageBanner" model="(IPageBanner)Model" />
+
+@Html.GetBlockListHtml(Model.Sections)
