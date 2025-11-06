@@ -496,9 +496,6 @@
   .bg-\[\@bgColor\] {
     background-color: @bgColor;
   }
-  .bg-\[\@sectionColor\] {
-    background-color: @sectionColor;
-  }
   .bg-black {
     background-color: var(--color-black);
   }

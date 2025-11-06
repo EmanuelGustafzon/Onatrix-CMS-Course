@@ -7,10 +7,10 @@
     string positionClass = settings.ImageRight ? "flex-row" : "flex-col";
     string contentClass = settings.ImageRight ? "gap-2" : "gap-4";
     string imageClass = settings.ImageRight ? "w-1/2" : "w-2/3";
-    var sectionColor = settings?.TrustUsBgColor?.Color ?? "#fff";
+    var bgColor = settings.TrustUsBgColor;
 }
 
-<section class="py-8 px-4 md:px-36 bg-[@sectionColor]">
+<section class="py-8 px-4 md:px-36 bg-[@bgColor]">
     <div class="flex flex-col @positionClass justify-center align-center gap-12">
         <div class="flex self-center">
             <div class="flex flex-col @contentClass">@Html.Raw(content.TrustContent)</div>
