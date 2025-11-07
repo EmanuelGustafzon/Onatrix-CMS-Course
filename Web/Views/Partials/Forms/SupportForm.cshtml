@@ -1,0 +1,27 @@
+﻿@using Web.ViewModels;
+@model SupportFormViewModel
+@using (Html.BeginUmbracoForm("HandleSupportForm", "Form", FormMethod.Post, new { novalidate = "novalidate", id = "supportForm" }))
+{
+    <div class="flex flex-col">
+        <div class="w-full relative">
+            <label asp-for="Email" class="sr-only"></label>
+            <input id="support-form-email-input" asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(x => x.Email)" class="w-full p-3 italic bg-white focus:ring-2 focus:ring-accent focus:outline-none rounded-sm" />
+            <span asp-validation-for="Email"></span>
+            <span class="pointer-events-none absolute right-5 inset-y-0 flex items-center">
+                <i class="bi bi-envelope text-gray-500 text-2xl"></i>
+            </span>
+        </div>
+        <button class="hidden" id="submit-support-form" type="submit"></button>
+    </div>
+}
+<script src="~/scripts/form.js"></script>
+<script>
+    var input = document.getElementById("support-form-email-input");
+
+    input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("submit-support-form").click();
+      }
+    });
+</script>

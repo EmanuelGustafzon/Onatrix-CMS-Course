@@ -1,0 +1,25 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Web.ViewModels;
+@{
+    var content = (ContentModels.QuestionFormSection)Model.Content;
+}
+
+<section class="py-8">
+    <div class="px-4 md:px-36 flex flex-col gap-4">
+        <h3 class="text-4xl text-primary font-bold">@content.QuestionFormTitle</h3>
+        <partial name="Partials/Forms/QuestionForm" model="new QuestionFormViewModel()"/>
+        @if (TempData["FormSuccess"] is not null)
+        {
+            <div class="bg-green-50 text-green-800 p-4 mx-12 rounded-md">
+                @TempData["FormSuccess"]
+            </div>
+        }
+        @if (TempData["FormError"] is not null)
+        {
+            <div class="bg-red-50 text-red-800 p-4 mx-12 rounded-md">
+                @TempData["FormError"]
+            </div>
+        }
+    </div>
+</section>

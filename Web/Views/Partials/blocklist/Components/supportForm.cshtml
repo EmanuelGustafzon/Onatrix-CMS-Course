@@ -1,0 +1,29 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Web.ViewModels
+@{
+    var content = (ContentModels.SupportForm)Model.Content;
+}
+
+<div class="overflow-hidden flex flex-col gap-2 py-8 px-2 bg-primary rounded-xs justify-center align-center text-center relative">
+    <h2 class="text-accent text-xl font-bold">@content.SupportFormHeading</h2>
+    <p class="text-white text-base">@content.SupportFormText</p>
+    <div class="z-3">
+        <partial name="Partials/Forms/SupportForm" model="new SupportFormViewModel()" />
+    </div>
+    <div class="z-1 -rotate-22 absolute -bottom-22 -right-8">
+        <i class="bi bi-envelope text-white text-[158px] opacity-15"></i>
+    </div>
+    @if (TempData["FormSuccess"] is not null)
+    {
+        <div class="bg-green-50 text-green-800 p-4 mx-12 rounded-md">
+            @TempData["FormSuccess"]
+        </div>
+    }
+    @if (TempData["FormError"] is not null)
+    {
+        <div class="bg-red-50 text-red-800 p-4 mx-12 rounded-md">
+            @TempData["FormError"]
+        </div>
+    }
+</div>
