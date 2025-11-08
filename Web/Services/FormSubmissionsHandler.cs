@@ -13,12 +13,12 @@ public class FormSubmissionsHandler(IContentService ContentService, IEmailhandle
     {
         try
         {
-            var contaienr = _contentService.GetRootContent().FirstOrDefault(x => x.ContentType.Alias == "callBackFormSubmissions");
-            if (contaienr is null)
+            var container = _contentService.GetRootContent().FirstOrDefault(x => x.ContentType.Alias == "callBackFormSubmissions");
+            if (container is null)
                 return false;
 
             var requestName = $"{DateTime.Now:yyyy-MM-dd HH:mm} - {viewModel.Name}";
-            var req = _contentService.Create(requestName, contaienr, "callBackRequest");
+            var req = _contentService.Create(requestName, container, "callBackRequest");
 
             req.SetValue("callBackRequestName", viewModel.Name);
             req.SetValue("callBackRequestEmail", viewModel.Email);
@@ -26,6 +26,8 @@ public class FormSubmissionsHandler(IContentService ContentService, IEmailhandle
             req.SetValue("callBackRequestOption", viewModel.SelectOption);
 
             var saveResult = _contentService.Save(req);
+
+            _emailHandler.SendEmailConfirmation(viewModel.Email);
 
             return saveResult.Success;
 
@@ -41,18 +43,20 @@ public class FormSubmissionsHandler(IContentService ContentService, IEmailhandle
     {
         try
         {
-            var contaienr = _contentService.GetRootContent().FirstOrDefault(x => x.ContentType.Alias == "questionFormSubmissions");
-            if (contaienr is null)
+            var container = _contentService.GetRootContent().FirstOrDefault(x => x.ContentType.Alias == "questionFormSubmissions");
+            if (container is null)
                 return false;
 
             var requestName = $"{DateTime.Now:yyyy-MM-dd HH:mm} - {viewModel.Name}";
-            var req = _contentService.Create(requestName, contaienr, "questionRequest");
+            var req = _contentService.Create(requestName, container, "questionRequest");
 
             req.SetValue("questionRequestName", viewModel.Name);
             req.SetValue("questionRequestEmail", viewModel.Email);
-            req.SetValue("questionRequestPhone", viewModel.Message);
+            req.SetValue("questionRequestMessage", viewModel.Message);
 
             var saveResult = _contentService.Save(req);
+
+            _emailHandler.SendEmailConfirmation(viewModel.Email);
 
             return saveResult.Success;
 
@@ -68,16 +72,18 @@ public class FormSubmissionsHandler(IContentService ContentService, IEmailhandle
     {
         try
         {
-            var contaienr = _contentService.GetRootContent().FirstOrDefault(x => x.ContentType.Alias == "supportFormSubmissions");
-            if (contaienr is null)
+            var container = _contentService.GetRootContent().FirstOrDefault(x => x.ContentType.Alias == "supportFormSubmissions");
+            if (container is null)
                 return false;
 
             var requestName = $"{DateTime.Now:yyyy-MM-dd HH:mm} - {viewModel.Email}";
-            var req = _contentService.Create(requestName, contaienr, "supportRequest");
+            var req = _contentService.Create(requestName, container, "supportRequest");
 
             req.SetValue("supportRequestEmail", viewModel.Email);
 
             var saveResult = _contentService.Save(req);
+
+            _emailHandler.SendEmailConfirmation(viewModel.Email);
 
             return saveResult.Success;
 
@@ -88,5 +94,4 @@ public class FormSubmissionsHandler(IContentService ContentService, IEmailhandle
             return false;
         }
     }
-
 }

@@ -9,11 +9,11 @@
 <section class="py-16 px-4 md:px-36">
 	<div class="max-w-7xl mx-auto px-4">
 		<div class="flex flex-row justify-between">
-			<aside class="hidden md:flex flex-col w-4/12">
+			<aside class="hidden lg:flex flex-col w-4/12">
 				@Html.GetBlockListHtml(Model.AsideWidgets)
 			</aside>
-			<div class="hidden md:block w-px bg-gray-300"></div>
-			<div class="flex flex-col w-full md:w-7/12 gap-3">
+			<div class="hidden lg:block w-px bg-gray-300"></div>
+			<div class="flex flex-col w-full lg:w-7/12 gap-3">
 				<div>@Html.Raw(Model.ServiceDetailPageContent)</div>
 			</div>
 		</div>
