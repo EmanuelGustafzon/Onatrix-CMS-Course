@@ -2,7 +2,7 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     var content = (ContentModels.PartnersSection)Model.Content;
-    var partners = content.Partners.ToArray();
+    var partners = content.Partners.ToArray() ?? [];
 }
 
 <section class="pt-24 pb-12 hidden md:block px-36">

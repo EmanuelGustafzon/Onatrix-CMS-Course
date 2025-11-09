@@ -9,13 +9,6 @@
 @inject IDocumentNavigationQueryService DocumentNavigationQueryService
 @inject IPublishedValueFallback PublishedValueFallback
 @inject IPublishedUrlProvider PublishedUrlProvider
-@*
-    This snippet displays a list of links of the pages immediately under the top-most page in the content tree.
-    This is the home page for a standard website.
-    It also highlights the current active page/section in the navigation with the CSS class "current".
-*@ 
-
-
 
 @{
     var contentRoot = Umbraco.ContentAtRoot();
@@ -50,7 +43,7 @@
         </nav>
     </div>
     <div class="hidden md:flex gap-2">
-        <input class="w-36 bg-white-100 rounded-sm border border-primary" type="text" name="searchQuery" value="" />
+        <input class="w-36 bg-white-100 rounded-sm border border-gray-100 focus:ring-2 focus:ring-primary focus:outline-none " type="text" name="searchQuery" value="" />
         <i class="bi bi-search"></i>
         
     </div>

@@ -14,6 +14,287 @@
       },
       "items": [
         {
+          "label": "Headings",
+          "items": [
+            {
+              "label": "heading 1",
+              "items": [
+                {
+                  "label": "XL",
+                  "items": [
+                    {
+                      "label": "Light",
+                      "data": {
+                        "tag": "h1",
+                        "class": "text-5xl font-light"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Normal",
+                      "data": {
+                        "tag": "h1",
+                        "class": "text-5xl font-regular"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Bold",
+                      "data": {
+                        "tag": "h1",
+                        "class": "text-5xl font-bold"
+                      },
+                      "appearence": {}
+                    }
+                  ]
+                },
+                {
+                  "label": "L",
+                  "items": [
+                    {
+                      "label": "Light",
+                      "data": {
+                        "tag": "h1",
+                        "class": "text-3xl font-light"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Normal",
+                      "data": {
+                        "tag": "h1",
+                        "class": "text-3xl font-regular"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Bold",
+                      "data": {
+                        "tag": "h1",
+                        "class": "text-3xl font-bold"
+                      },
+                      "appearence": {}
+                    }
+                  ]
+                },
+                {
+                  "label": "M",
+                  "items": [
+                    {
+                      "label": "Light",
+                      "data": {
+                        "tag": "h1",
+                        "class": "text-lg font-light"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Normal",
+                      "data": {
+                        "tag": "h1",
+                        "class": "text-lg font-regular"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Bold",
+                      "data": {
+                        "tag": "h1",
+                        "class": "text-lg font-bold"
+                      },
+                      "appearence": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "heading 2",
+              "items": [
+                {
+                  "label": "XL",
+                  "items": [
+                    {
+                      "label": "Light",
+                      "data": {
+                        "tag": "h2",
+                        "class": "text-5xl font-light"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Normal",
+                      "data": {
+                        "tag": "h2",
+                        "class": "text-5xl font-regular"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Bold",
+                      "data": {
+                        "tag": "h2",
+                        "class": "text-5xl font-bold"
+                      },
+                      "appearence": {}
+                    }
+                  ]
+                },
+                {
+                  "label": "L",
+                  "items": [
+                    {
+                      "label": "Light",
+                      "data": {
+                        "tag": "h2",
+                        "class": "text-3xl font-light"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Normal",
+                      "data": {
+                        "tag": "h2",
+                        "class": "text-3xl font-regular"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Bold",
+                      "data": {
+                        "tag": "h2",
+                        "class": "text-3xl font-bold"
+                      },
+                      "appearence": {}
+                    }
+                  ]
+                },
+                {
+                  "label": "M",
+                  "items": [
+                    {
+                      "label": "Light",
+                      "data": {
+                        "tag": "h2",
+                        "class": "text-lg font-light"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Normal",
+                      "data": {
+                        "tag": "h2",
+                        "class": "text-lg font-regular"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Bold",
+                      "data": {
+                        "tag": "h2",
+                        "class": "text-lg font-bold"
+                      },
+                      "appearence": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "heading 3",
+              "items": [
+                {
+                  "label": "XL",
+                  "items": [
+                    {
+                      "label": "Light",
+                      "data": {
+                        "tag": "h3",
+                        "class": "text-5xl font-light"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Normal",
+                      "data": {
+                        "tag": "h3",
+                        "class": "text-5xl font-regular"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Bold",
+                      "data": {
+                        "tag": "h3",
+                        "class": "text-5xl font-bold"
+                      },
+                      "appearence": {}
+                    }
+                  ]
+                },
+                {
+                  "label": "L",
+                  "items": [
+                    {
+                      "label": "Light",
+                      "data": {
+                        "tag": "h3",
+                        "class": "text-3xl font-light"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Normal",
+                      "data": {
+                        "tag": "h3",
+                        "class": "text-3xl font-regular"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Bold",
+                      "data": {
+                        "tag": "h3",
+                        "class": "text-3xl font-bold"
+                      },
+                      "appearence": {}
+                    }
+                  ]
+                },
+                {
+                  "label": "M",
+                  "items": [
+                    {
+                      "label": "Light",
+                      "data": {
+                        "tag": "h3",
+                        "class": "text-lg font-light"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Normal",
+                      "data": {
+                        "tag": "h3",
+                        "class": "text-lg font-regular"
+                      },
+                      "appearence": {}
+                    },
+                    {
+                      "label": "Bold",
+                      "data": {
+                        "tag": "h3",
+                        "class": "text-lg font-bold"
+                      },
+                      "appearence": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "label": "Paragraphs",
           "items": [
             {
@@ -175,7 +456,7 @@
               }
             }
           ]
-          
+
         }
       ]
     },

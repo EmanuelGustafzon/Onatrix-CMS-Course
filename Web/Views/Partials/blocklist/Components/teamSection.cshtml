@@ -11,7 +11,7 @@
         </div>
 
         <div class="flex flex-wrap -mx-2">
-            @for (int i = 0; i < members.Count; i++)
+            @for (int i = 0; i < members?.Count; i++)
             {
                 var member = members[i];
                 var widthClass = i < 3 ? "md:w-1/3" : "md:w-1/4";
