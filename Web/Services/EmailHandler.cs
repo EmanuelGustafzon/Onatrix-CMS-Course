@@ -16,15 +16,15 @@ public class EmailHandler(IConfiguration config) : IEmailhandler
             var emailClient = new EmailClient(connectionString);
 
             var emailMessage = new EmailMessage(
-                senderAddress: "DoNotReply@7dbc1663-afc5-4f3b-a2e9-c01cca66f59a.azurecomm.net",
-                content: new EmailContent("Thanks for reaching out to Onatrix")
+                senderAddress: _config["EMAIL_DOMAIN"],
+                content: new EmailContent("We have revieved your message")
                 {
-                    PlainText = "Thanks for reaching out to us at Onatrix. We will get back to you soon.",
+                    PlainText = "Thanks for contacting us at Onatrix We have recieved your message and we will soon get back to you!",
                     Html = @"
 		            <html>
 			            <body>
 				            <h1>
-					            Thanks for reaching out to us at Onatrix. We will get back to you soon.
+					            Thanks for contacting us at Onatrix We have recieved your message and we will soon get back to you!
 				            </h1>
 			            </body>
 		            </html>"

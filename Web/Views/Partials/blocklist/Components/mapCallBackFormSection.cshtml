@@ -7,10 +7,9 @@
 
 <section>
     <img class="w-full" src="@content.MapImage.Url()" />
-
-    <div class="w-full md:w-2/3 mx-auto bg-white mx-auto md:-mt-86 relative ">
+    <div class="w-full md:w-2/3 mx-auto bg-white mx-auto md:-mt-86 relative py-8 shadow-md">
         <div class="flex flex-col gap-2">@Html.Raw(content.MapFormContent)</div>
-        <partial name="Partials/Forms/CallBackForm" model="new CallBackFormViewModel()" />
+        <partial name="Partials/Forms/CallBackFormWide" model="new CallBackFormViewModel()" />
         @if (TempData["FormSuccess"] is not null)
         {
             <div class="bg-green-50 text-green-800 p-4 mx-12 rounded-md">
