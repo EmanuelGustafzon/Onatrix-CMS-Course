@@ -1,3 +1,4 @@
+using Web.Interfaces;
 using Web.Services;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -7,7 +8,8 @@ builder.CreateUmbracoBuilder()
     .AddWebsite()
     .AddComposers()
     .Build();
-builder.Services.AddScoped<FormSubmissionsService>();
+builder.Services.AddScoped<FormSubmissionsHandler>();
+builder.Services.AddTransient<IEmailhandler, EmailHandler>();
 
 WebApplication app = builder.Build();
 
