@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Home Page</summary>
 	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel
+	public partial class HomePage : PublishedContentModel, IPageMetaData
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -56,5 +56,21 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("sections")]
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Sections => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "sections");
+
+		///<summary>
+		/// MetaDataDescription
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("metaDataDescription")]
+		public virtual string MetaDataDescription => global::Umbraco.Cms.Web.Common.PublishedModels.PageMetaData.GetMetaDataDescription(this, _publishedValueFallback);
+
+		///<summary>
+		/// MetaDataKeywords
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("metaDataKeywords")]
+		public virtual string MetaDataKeywords => global::Umbraco.Cms.Web.Common.PublishedModels.PageMetaData.GetMetaDataKeywords(this, _publishedValueFallback);
 	}
 }
