@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Contact Page</summary>
 	[PublishedModel("contactPage")]
-	public partial class ContactPage : PublishedContentModel, IPageBanner
+	public partial class ContactPage : PublishedContentModel, IPageBanner, IPageMetaData
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -64,5 +64,21 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("pageTitle")]
 		public virtual string PageTitle => global::Umbraco.Cms.Web.Common.PublishedModels.PageBanner.GetPageTitle(this, _publishedValueFallback);
+
+		///<summary>
+		/// MetaDataDescription
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("metaDataDescription")]
+		public virtual string MetaDataDescription => global::Umbraco.Cms.Web.Common.PublishedModels.PageMetaData.GetMetaDataDescription(this, _publishedValueFallback);
+
+		///<summary>
+		/// MetaDataKeywords
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("metaDataKeywords")]
+		public virtual string MetaDataKeywords => global::Umbraco.Cms.Web.Common.PublishedModels.PageMetaData.GetMetaDataKeywords(this, _publishedValueFallback);
 	}
 }
